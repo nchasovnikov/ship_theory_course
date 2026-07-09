@@ -1,0 +1,58 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=1.0cm}},
+        column 2/.append style={nodes={text width=1.4cm}},
+        column 3/.append style={nodes={text width=1.4cm}},
+        column 4/.append style={nodes={text width=1.4cm}},
+        column 5/.append style={nodes={text width=1.4cm}},
+        column 6/.append style={nodes={text width=1.4cm}},
+        column 7/.append style={nodes={text width=1.4cm}},
+        column 8/.append style={nodes={text width=1.4cm}}
+        ] {
+        $i_{\text{ВЛ}}$ & $z$ & $S$ & $x_f$ & $M_y$ & $I_x$  & $I_y$ & $I_{yf}$ \\
+        \scriptsize{I}   &    \scriptsize{II}   &   \scriptsize{III}   &   \scriptsize{IV} &   \scriptsize{V} &   \scriptsize{VI} &   \scriptsize{VII} &   \scriptsize{VIII}\\
+        0   &   0,000   &   1515,0   &   0,442   &   670,1   &   31717,2   &   1216477   &   1216180   \\
+        1   &   2,171   &   2917,1   &   0,731   &   2133,8   &   117735,5   &   4417208   &   4415648   \\
+        2   &   4,343   &   3295,0   &   -0,685   &   -2256,7   &   153254,3   &   5251966   &   5250420   \\
+        3   &   6,514   &   3523,2   &   -2,448   &   -8623,9   &   176087,0   &   5809196   &   5788087   \\
+        4   &   8,686   &   3744,2   &   -4,166   &   -15599,6   &   196199,8   &   6579359   &   6514366   \\
+        5   &   10,857   &   4094,2   &   -7,644   &   -31294,7   &   219988,9   &   8418697   &   8179493   \\
+        6   &   13,029   &   4416,4   &   -9,027   &   -39865,6   &   245376,0   &   10307031   &   9947177   \\
+        7   &   15,200   &   4709,7   &   -8,715   &   -41045,2   &   271932,0   &   12019817   &   11662104   \\
+        };
+    \end{tikzpicture}
+\end{document}

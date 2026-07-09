@@ -1,0 +1,59 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=1.0cm}},
+        column 2/.append style={nodes={text width=2.0cm}},
+        column 3/.append style={nodes={text width=2.0cm}},
+        column 4/.append style={nodes={text width=2.0cm}},
+        column 5/.append style={nodes={text width=2.0cm}}
+        ] {
+        $i_{\text{ШП}}$ & $T$ &  $\Omega$ & $V$ & $M$ \\
+        \scriptsize{I}   &    \scriptsize{II}   &   \scriptsize{III}   &   \scriptsize{IV}  &   \scriptsize{V}\\
+        0  &  -3,977  &  0,00  &  0,00  &  0,00   \\
+        1  &  -2,802  &  0,00  &  0,00  &  0,00   \\
+        2  &  -1,627  &  0,00  &  0,00  &  0,00   \\
+        3  &  -0,452  &  0,00  &  0,00  &  0,00   \\
+        4  &  0,723  &  13,68  &  13,68  &  13,68   \\
+        5  &  1,898  &  46,32  &  46,32  &  0,00   \\
+        6  &  3,073  &  70,49  &  70,49  &  -70,49   \\
+        7  &  4,248  &  74,44  &  74,44  &  -148,88   \\
+        8  &  5,423  &  58,48  &  58,48  &  -175,45   \\
+        9  &  6,598  &  30,39  &  24,18  &  -96,72   \\
+        10  &  7,773  &  0,00  &  0,00  &  0,00   \\
+        ---  &  ---  &  ---  &  5751,6  &  -191143   \\
+        };
+    \end{tikzpicture}
+\end{document}

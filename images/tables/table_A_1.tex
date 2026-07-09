@@ -1,0 +1,65 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\scriptsize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=0.8cm}},
+        column 2/.append style={nodes={text width=0.8cm}},
+        column 3/.append style={nodes={text width=0.8cm}},
+        column 4/.append style={nodes={text width=0.8cm}},
+        column 5/.append style={nodes={text width=0.8cm}},
+        column 6/.append style={nodes={text width=0.8cm}},
+        column 7/.append style={nodes={text width=0.8cm}},
+        column 8/.append style={nodes={text width=0.8cm}},
+        column 9/.append style={nodes={text width=0.8cm}},
+        column 10/.append style={nodes={text width=0.8cm}},
+        column 11/.append style={nodes={text width=0.8cm}},
+        column 12/.append style={nodes={text width=0.8cm}}
+        ] {
+        ВЛ & 0     & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9     & 10  \\
+        0  &  --- & 0,106 & 1,358 &4,394 & 7,901 & 10,407 & 8,422 & 4,177 & 0,892 & 0,307 & --- \\
+        1  &  1,502 & 2,608 & 4,696 &8,439 & 12,225 & 14,250 & 13,204 & 9,709 & 5,441 & 2,068 & --- \\
+        2  &  1,360 & 2,766 & 5,791 &9,862 & 13,364 & 14,514 & 14,176 & 11,722 & 7,360 & 2,756 & --- \\
+        3  &  0,748 & 2,793 & 6,531 &10,753 & 13,830 & 14,514 & 14,461 & 12,908 & 9,065 & 3,745 & --- \\
+        4  &  0,303 & 3,037 & 7,220 &11,456 & 14,067 & 14,514 & 14,514 & 13,662 & 10,703 & 5,551 & --- \\
+        5  &  0,006 & 3,647 & 8,057 &12,064 & 14,228 & 14,514 & 14,514 & 14,147 & 12,191 & 8,094 & 1,795 \\
+        6  &  0,392 & 4,707 & 9,085 &12,615 & 14,365 & 14,514 & 14,514 & 14,426 & 13,303 & 10,186 & 4,419 \\
+        7  &  1,154 & 6,193 & 10,294 &13,194 & 14,467 & 14,514 & 14,514 & 14,514 & 14,130 & 11,720 & 6,161 \\
+        П  &  6,652 & 12,292 & 13,854 &14,270 & 14,514 & 14,514 & 14,514 & 14,514 & 14,514 & 13,487 & 8,556 \\
+        $z$  &  22,443 & 21,634 & 20,173 &18,971 & 18,971 & 18,971 & 18,971 & 18,971 & 18,971 & 18,971 & 18,971 \\
+        $z_1$  &  20,054 & 13,220 & 2,454 &0,051 & 0,000 & 0,000 & 0,000 & 0,080 & 1,619 & 7,963 & 13,551 \\
+        $z_2$  &  --- & 18,874 & 14,090 &3,989 & 0,419 & 0,000 & 0,000 & 0,100 & 2,158 & 7,324 & 12,499 \\
+        };
+    \end{tikzpicture}
+\end{document}

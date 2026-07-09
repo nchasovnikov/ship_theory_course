@@ -1,0 +1,82 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=0.8cm}},
+        column 2/.append style={nodes={text width=0.8cm}},
+        column 3/.append style={nodes={text width=0.8cm}},
+        column 4/.append style={nodes={text width=0.8cm}},
+        column 5/.append style={nodes={text width=0.8cm}},
+        column 6/.append style={nodes={text width=0.8cm}},
+        column 7/.append style={nodes={text width=0.8cm}},
+        column 8/.append style={nodes={text width=0.8cm}},
+        column 9/.append style={nodes={text width=0.8cm}},
+        column 10/.append style={nodes={text width=1.2cm}},
+        column 11/.append style={nodes={text width=1.2cm}}
+        ] {
+        $h$ & $h + c$ &  $\text{II} / \beta$ & $S$ & $V$ & $v'$ & $gW$ & --- & $m'$ & $M'$ & $\gamma m$  \\
+        \scriptsize{I}   &    \scriptsize{II}   &   \scriptsize{III}   &   \scriptsize{IV}  &   \scriptsize{V}&   \scriptsize{VI} &   \scriptsize{VII} &   \scriptsize{VIII} &   \scriptsize{IX} &   \scriptsize{X} &   \scriptsize{XI}  \\
+        0,545  &  1,14  &  19,1  &  96,6  &  2676,3  &  134,2  &  2542,0  &  -12,45  &  -1671,1  &  -105900  &  -104229  \\
+        1,045  &  1,64  &  27,4  &  104,9  &  3560,1  &  134,2  &  3425,9  &  -4,12  &  -552,6  &  -129964  &  -129411  \\
+        1,545  &  2,14  &  35,7  &  113,2  &  4580,3  &  134,2  &  4446,1  &  4,22  &  565,9  &  -153931  &  -154497   \\
+        2,045  &  2,64  &  44,1  &  121,6  &  5751,6  &  134,2  &  5617,4  &  12,55  &  1684,4  &  -176764  &  -178449 \\
+        2,545  &  3,14  &  52,4  &  129,9  &  6972,5  &  134,2  &  6838,3  &  20,88  &  2803,0  &  -199447  &  -202250 \\
+        3,045  &  3,64  &  60,7  &  138,2  &  8324,7  &  134,2  &  8190,5  &  29,22  &  3921,5  &  -216933  &  -220855 \\
+        };
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=0.8cm}},
+        column 2/.append style={nodes={text width=0.8cm}},
+        column 3/.append style={nodes={text width=0.8cm}},
+        column 4/.append style={nodes={text width=1.0cm}},
+        column 5/.append style={nodes={text width=1.2cm}},
+        column 6/.append style={nodes={text width=0.8cm}},
+        column 7/.append style={nodes={text width=0.8cm}},
+        column 8/.append style={nodes={text width=1.2cm}},
+        column 9/.append style={nodes={text width=1.2cm}}
+        ] {
+         $S$ & $x'_c$ &  $\gamma W$ & $L_2 - \text{III}$ & $M_W$ & $a$ & $\text{VII-III}$ & $M'_W$ & $M'd$ \\
+        \scriptsize{I}   &    \scriptsize{II}   &   \scriptsize{III}   &   \scriptsize{IV}  &   \scriptsize{V}&   \scriptsize{VI} &   \scriptsize{VII} &   \scriptsize{VIII} &   \scriptsize{IX}  \\
+        96,58  &  -41,0  &  2542,0  &  123,5  &  313946  &  -28,2  &  12,79  &  32502  &  -249430   \\
+        104,91  &  -37,8  &  3425,9  &  120,3  &  412047  &  -19,9  &  17,89  &  61294  &  -175764   \\
+        113,25  &  -34,7  &  4446,1  &  117,2  &  521301  &  -11,5  &  23,20  &  103146  &  -102098   \\
+        121,58  &  -31,8  &  5617,4  &  114,3  &  641881  &  -3,2  &  28,55  &  160381  &  -28432   \\
+        129,91  &  -29,6  &  6838,3  &  112,1  &  766408  &  5,1  &  34,69  &  237241  &  45234   \\
+        138,25  &  -27,0  &  8190,5  &  109,5  &  896573  &  13,5  &  40,42  &  331020  &  118901   \\
+        };
+    \end{tikzpicture}
+\end{document}

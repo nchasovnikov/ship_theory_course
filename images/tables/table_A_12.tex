@@ -1,0 +1,52 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=1.0cm}},
+        column 2/.append style={nodes={text width=2.0cm}},
+        column 3/.append style={nodes={text width=2.0cm}},
+        column 4/.append style={nodes={text width=2.0cm}},
+        column 5/.append style={nodes={text width=2.0cm}}
+        ] {
+        $\Theta$ & $l_{\text{Ф}}$ & $l_{\Theta}$ & --- & $d$  \\
+        \scriptsize{I}   &    \scriptsize{II}   &   \scriptsize{III}   &   \scriptsize{IV} & \scriptsize{V} \\
+        0  &  0,000  &  0,000  &  0,000  &  0,000   \\
+        15  &  1,557  &  0,177  &  0,457  &  0,020   \\
+        30  &  3,309  &  0,642  &  2,786  &  0,122   \\
+        45  &  4,729  &  0,958  &  7,849  &  0,342   \\
+        60  &  5,289  &  0,671  &  12,967  &  0,566   \\
+        };
+    \end{tikzpicture}
+\end{document}
