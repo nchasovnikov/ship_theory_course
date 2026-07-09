@@ -1,0 +1,54 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{ 
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.2ex,
+        text height=1.20ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [table,
+        row 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.append style={nodes={text width=0.5cm}},
+        column 2/.append style={nodes={text width=1.5cm}},
+        column 3/.append style={nodes={text width=0.7cm}},
+        column 4/.append style={nodes={text width=1.5cm}},
+        column 5/.append style={nodes={text width=3.0cm}},
+        column 6/.append style={nodes={text width=3.0cm}}
+        ] {
+        & A  & B & C & D & E \\
+        1 & =SIN(0) & $l_{\text{ф}0}$ & =B1-$a$*A1 & 0 & =$\Delta \Theta$/2 * D1 \\
+        2 & =SIN(15) & $l_{\text{ф}15}$ & =B2-$a$*A2 & =D1+(C1+C2) & =$\Delta \Theta$/2 * D2 \\
+        3 & =SIN(30) & $l_{\text{ф}30}$ & =B3-$a$*A3 & =D2+(C2+C3) & =$\Delta \Theta$/2 * D3 \\
+        4 & =SIN(45) & $l_{\text{ф}45}$ & =B4-$a$*A4 & =D3+(C3+C4) & =$\Delta \Theta$/2 * D4 \\
+        5 & =SIN(60) & $l_{\text{ф}60}$ & =B5-$a$*A5 & =D4+(C4+C5) & =$\Delta \Theta$/2 * D5 \\
+        };
+    \end{tikzpicture}
+\end{document}

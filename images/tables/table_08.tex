@@ -1,0 +1,60 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{ 
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.2ex,
+        text height=1.20ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [table,
+        row 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.append style={nodes={text width=0.5cm}},
+        column 2/.append style={nodes={text width=0.7cm}},
+        column 3/.append style={nodes={text width=1.0cm}},
+        column 4/.append style={nodes={text width=1.0cm}},
+        column 5/.append style={nodes={text width=1.0cm}},
+        column 6/.append style={nodes={text width=1.0cm}},
+        column 7/.append style={nodes={text width=1.5cm}},
+        column 8/.append style={nodes={text width=1.5cm}},
+        column 9/.append style={nodes={text width=1.5cm}}
+        ] {
+        & A  & B & C & D & E & F & G & H  \\
+        1 & 0 & 0 & $I_{x0}$ & $I_{yf0}$ & $z_{c0}$ & --- & --- & --- \\
+        2 & 1 & $V_1$ & $I_{x1}$ & $I_{yf1}$ & $z_{c1}$ & =C2/B2 & =D2/B2 & =E2+F2 \\
+        3 & 2 & $V_2$ & $I_{x2}$ & $I_{yf2}$ & $z_{c2}$ & =C3/B3 & =D3/B3 & =E3+F3 \\
+        4 & 3 & $V_3$ & $I_{x3}$ & $I_{yf3}$ & $z_{c3}$ & =C4/B4 & =D4/B4 & =E4+F4 \\
+        5 & 4 & $V_4$ & $I_{x4}$ & $I_{yf4}$ & $z_{c4}$ & =C5/B5 & =D5/B5 & =E5+F5 \\
+        6 & 5 & $V_5$ & $I_{x5}$ & $I_{yf5}$ & $z_{c5}$ & =C6/B6 & =D6/B6 & =E6+F6 \\
+        7 & 6 & $V_6$ & $I_{x6}$ & $I_{yf6}$ & $z_{c6}$ & =C7/B7 & =D7/B7 & =E7+F7 \\
+        8 & 7 & $V_7$ & $I_{x7}$ & $I_{yf7}$ & $z_{c7}$ & =C8/B8 & =D8/B8 & =E8+F8 \\
+        };
+    \end{tikzpicture}
+\end{document}

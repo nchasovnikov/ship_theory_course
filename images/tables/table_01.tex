@@ -1,0 +1,58 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{ 
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.2ex,
+        text height=1.20ex,
+        nodes in empty cells
+    }
+}
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [table, ampersand replacement=\&,
+        row 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.append style={nodes={text width=0.5cm}},
+        column 2/.append style={nodes={text width=0.7cm}},
+        column 3/.append style={nodes={text width=0.7cm}},
+        column 4/.append style={nodes={text width=0.7cm}},
+        column 5/.append style={nodes={text width=0.7cm}},
+        column 6/.append style={nodes={text width=0.7cm}},
+        column 7/.append style={nodes={text width=3.0cm}},
+        column 8/.append style={nodes={text width=3.5cm}}
+        ] {
+        \& A  \& B \& C \& D \& E \& F \& G \\
+        1 \& 0 \& $\bar{x}_{\text{Ф}0}$ \& $\bar{x}_{\text{А}0}$ \& $i_{\text{Н}0}$ \& $i_{\text{К}0}$ \& =0,5*(1 + B1+D1) \& =0,5*(1 + 10-C1-E1)\\
+        2 \& 1 \& $\bar{x}_{\text{Ф}1}$ \& $\bar{x}_{\text{А}1}$ \& $i_{\text{Н}1}$ \& $i_{\text{К}1}$ \& =0,5*(1 + B2+D2) \& =0,5*(1 + 10-C2-E2)\\
+        3 \& 2 \& $\bar{x}_{\text{Ф}2}$ \& $\bar{x}_{\text{А}2}$ \& $i_{\text{Н}2}$ \& $i_{\text{К}2}$ \& =0,5*(1 + B3+D3) \& =0,5*(1 + 10-C3-E3)\\
+        4 \& 3 \& $\bar{x}_{\text{Ф}3}$ \& $\bar{x}_{\text{А}3}$ \& $i_{\text{Н}3}$ \& $i_{\text{К}3}$ \& =0,5*(1 + B4+D4) \& =0,5*(1 + 10-C4-E4)\\
+        5 \& 4 \& $\bar{x}_{\text{Ф}4}$ \& $\bar{x}_{\text{А}4}$ \& $i_{\text{Н}4}$ \& $i_{\text{К}4}$ \& =0,5*(1 + B5+D5) \& =0,5*(1 + 10-C5-E5)\\
+        6 \& 5 \& $\bar{x}_{\text{Ф}5}$ \& $\bar{x}_{\text{А}5}$ \& $i_{\text{Н}5}$ \& $i_{\text{К}5}$ \& =0,5*(1 + B6+D6) \& =0,5*(1 + 10-C6-E6)\\
+        7 \& 6 \& $\bar{x}_{\text{Ф}6}$ \& $\bar{x}_{\text{А}6}$ \& $i_{\text{Н}6}$ \& $i_{\text{К}6}$ \& =0,5*(1 + B7+D7) \& =0,5*(1 + 10-C7-E7)\\
+        8 \& 7 \& $\bar{x}_{\text{Ф}7}$ \& $\bar{x}_{\text{А}7}$ \& $i_{\text{Н}7}$ \& $i_{\text{К}7}$ \& =0,5*(1 + B8+D8) \& =0,5*(1 + 10-C8-E8)\\
+        };
+    \end{tikzpicture}
+\end{document}

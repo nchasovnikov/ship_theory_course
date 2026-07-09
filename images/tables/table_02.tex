@@ -1,0 +1,54 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{ 
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.2ex,
+        text height=1.20ex,
+        nodes in empty cells
+    }
+}
+\footnotesize
+\begin{tikzpicture}
+            \matrix (mat) [table,
+            row 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+            column 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+            column 1/.append style={nodes={text width=0.5cm}},
+            column 2/.append style={nodes={text width=1.5cm}},
+            column 3/.append style={nodes={text width=1.5cm}},
+            column 4/.append style={nodes={text width=3cm}},
+            column 5/.append style={nodes={text width=3cm}}
+            ] {
+            & A & B & C & D \\
+            1 & 0 & --- & 0 & =C1*$\Delta T$\\
+            2 & $z_1$ & $y_1$ & =C1+0,5*B2*$K_0$ & =C2*$\Delta T$\\
+            3 & $z_2$ & $y_2$ & =C2+0,5*(B2+B3) & =C3*$\Delta T$\\
+            4 & $z_3$ & $y_3$ & =C3+0,5*(B3+B4) & =C4*$\Delta T$\\
+            5 & $z_4$ & $y_4$ & =C4+0,5*(B4+B5) & =C5*$\Delta T$\\
+            6 & $z_5$ & $y_5$ & =C5+0,5*(B5+B6) & =C6*$\Delta T$\\
+            7 & $z_6$ & $y_6$ & =C6+0,5*(B6+B7) & =C7*$\Delta T$\\
+            };
+        \end{tikzpicture}
+\end{document}

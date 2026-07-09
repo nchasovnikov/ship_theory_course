@@ -1,0 +1,60 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{ 
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.2ex,
+        text height=1.20ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+    \begin{tikzpicture}
+        \matrix (mat) [table,
+        row 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.style={nodes={fill=gray!10,align=center,font=\segoe}},
+        column 1/.append style={nodes={text width=0.5cm}},
+        column 2/.append style={nodes={text width=1.0cm}},
+        column 3/.append style={nodes={text width=1.5cm}},
+        column 4/.append style={nodes={text width=1.0cm}},
+        column 5/.append style={nodes={text width=1.0cm}},
+        column 6/.append style={nodes={text width=1.0cm}},
+        column 7/.append style={nodes={text width=1.0cm}},
+        column 8/.append style={nodes={text width=1.0cm}},
+        column 9/.append style={nodes={text width=1.0cm}}
+        ] {
+        & A  & B & C & D & E & F & G & H \\
+        1 & 0 & =$\Delta T$*A1 & $S_0$ & $x_{f0}$ & $M_{y0}$ & $I_{x0}$ & $I_{y0}$ & $I_{yf0}$ \\
+        2 & 1 & =$\Delta T$*A2 & $S_1$ & $x_{f1}$ & $M_{y1}$ & $I_{x1}$ & $I_{y1}$ & $I_{yf1}$ \\
+        3 & 2 & =$\Delta T$*A3 & $S_2$ & $x_{f2}$ & $M_{y2}$ & $I_{x2}$ & $I_{y2}$ & $I_{yf2}$ \\
+        4 & 3 & =$\Delta T$*A4 & $S_3$ & $x_{f3}$ & $M_{y3}$ & $I_{x3}$ & $I_{y3}$ & $I_{yf3}$ \\
+        5 & 4 & =$\Delta T$*A5 & $S_4$ & $x_{f4}$ & $M_{y4}$ & $I_{x4}$ & $I_{y4}$ & $I_{yf4}$ \\
+        6 & 5 & =$\Delta T$*A6 & $S_5$ & $x_{f5}$ & $M_{y5}$ & $I_{x5}$ & $I_{y5}$ & $I_{yf5}$ \\
+        7 & 6 & =$\Delta T$*A7 & $S_6$ & $x_{f6}$ & $M_{y6}$ & $I_{x6}$ & $I_{y6}$ & $I_{yf6}$ \\
+        8 & 7 & =$\Delta T$*A8 & $S_7$ & $x_{f7}$ & $M_{y7}$ & $I_{x7}$ & $I_{y7}$ & $I_{yf7}$ \\
+        };
+    \end{tikzpicture}
+\end{document}
