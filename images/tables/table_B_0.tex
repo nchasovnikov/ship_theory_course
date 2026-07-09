@@ -1,0 +1,73 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=1.4cm}},
+        column 2/.append style={nodes={text width=9.0cm}}
+        ] {
+            Вариант & Наименование\\
+            1 & контейнеровоз S175 \\
+            2 & авизо <<Grille>> \\
+            3 & барк <<Товарищ>> \\
+            4 & теплоход <<Азербайджан>> \\
+            5 & научно--исследовательское судно <<Прибой>> \\
+            6 & теплоход <<Башкирия>> \\
+            7 & ракетный крейсер USS <<Virginia>> \\
+            8 & сухогруз <<Mieszko I>> \\
+            9 & сухогруз <<Ciechanów>> \\
+            10& речное каботажное судно <<Emilia>> \\
+            11& рефрижераторное судно <<Академик Вавилов>> \\
+            12& судно--снабженец <<Гранит>> \\
+            13& большой консервный рыболовный траулер <<Наталья Ковшова>> \\
+            14& ледокол <<Добрыня Никитич>> \\
+            15& большой морозильный рыболовный траулер <<Ленинец>> \\
+            16& пароход <<Боре>> \\
+            17& контейнеровоз <<Художник Сарьян>> \\
+            18& научно--исследовательское судно <<Hesperides>> \\
+            19& научно--исследовательское судно <<Посейдон>> (FS "Poseidon") \\
+            20& трансатлантический лайнер <<Франс>> \\
+            21& трансатлантический лайнер <<Нормандия>> \\
+            22& эсминец USS <<Coonts>> \\
+            23& базовый тральщик <<YMS>> \\
+            24& сухогрузный судно <<Капитан Кушнаренко>> \\
+            25& лайнер <<Сити оф Пэрис>> ("City of Paris") \\
+            26& средний рыболовный траулер <<СРТ-129>> \\
+            27& атомный ледокол <<Ленин>> \\
+            28& буксир-спасатель <<Барс>> \\
+            29& легкий крейсер <<Светлана>> \\
+            30& эсминец <<Гневный>> \\
+        };
+    \end{tikzpicture}
+\end{document}

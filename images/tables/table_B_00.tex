@@ -1,0 +1,76 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\footnotesize
+\begin{tikzpicture}
+        \matrix (mat) [addenum,
+        column 1/.append style={nodes={text width=1.4cm}},
+        column 2/.append style={nodes={text width=1.2cm}},
+        column 3/.append style={nodes={text width=1.2cm}},
+        column 4/.append style={nodes={text width=1.2cm}},
+        column 5/.append style={nodes={text width=4.0cm}}
+        ] {
+            Вариант & $L_{\text{ПП}}$, м & $L/B$ & $B/T$ & Примечание\\
+            1 & 175,0 & 6,890 & 2,674 & --- \\
+            2 & 115,0 & 8,519 & 3,375 & --- \\
+            3 &  84,2 & 6,630 & 2,190 & --- \\
+            4 & 138,0 & 6,301 & 3,776 & Слом не учитывается \\
+            5 &  86,0 & 6,232 & 2,760 & --- \\
+            6 & 114,0 & 7,125 & 3,077 & --- \\
+            7 & 177,3 & 9,381 & 3,150 & Обтекатель не учитывается \\
+            8 & 135,4 & 7,204 & 2,474 & --- \\
+            9 &  89,4 & 6,526 & 2,491 & --- \\
+            10&  39,5 & 4,877 & 2,700 & --- \\
+            11& 126,0 & 5,860 & 2,622 & Имеется транец \\
+            12&  56,4 & 4,087 & 2,936 & Имеется транец \\
+            13& 115,0 & 6,057 & 2,754 & --- \\
+            14&  62,0 & 3,543 & 3,182 & --- \\
+            15&  80,0 & 5,714 & 2,545 & Имеется транец \\
+            16&  64,0 & 6,737 & 3,167 & --- \\
+            17& 157,2 & 6,189 & 2,822 & Имеется транец \\
+            18&  77,5 & 5,420 & 3,178 & Имеется транец \\
+            19&  55,0 & 4,825 & 3,040 & Имеется транец \\
+            20& 299,0 & 9,344 & 3,048 & --- \\
+            21& 295,0 & 8,217 & 3,234 & --- \\
+            22& 149,3 & 9,390 & 2,944 & --- \\
+            23&  40,0 & 5,556 & 3,600 & --- \\
+            24& 156,0 & 7,163 & 2,234 & --- \\
+            25& 159,0 & 8,368 & 2,794 & --- \\
+            26&  34,7 & 4,753 & 2,704 & --- \\
+            27& 117,8 & 4,268 & 2,968 & --- \\
+            28&  80,4 & 5,221 & 2,610 & --- \\
+            29& 159,0 &10,127 & 2,754 & --- \\
+            30& 129,8 & 8,747 & 3,533 & --- \\
+        };
+    \end{tikzpicture}
+\end{document}
