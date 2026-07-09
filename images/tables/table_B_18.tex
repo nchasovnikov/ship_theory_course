@@ -1,0 +1,68 @@
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+
+\input{./chap/preamble.tex}
+
+\begin{document}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\scriptsize
+\begin{tikzpicture}
+            \matrix (mat) [addenum, ampersand replacement=\&,
+            column 1/.append style={nodes={text width=1.0cm}},
+            column 2/.append style={nodes={text width=1.0cm}},
+            column 3/.append style={nodes={text width=1.0cm}},
+            column 4/.append style={nodes={text width=1.0cm}},
+            column 5/.append style={nodes={text width=1.0cm}},
+            column 6/.append style={nodes={text width=1.0cm}},
+            column 7/.append style={nodes={text width=1.0cm}},
+            column 8/.append style={nodes={text width=1.0cm}},
+            column 9/.append style={nodes={text width=1.0cm}},
+            column 10/.append style={nodes={text width=1.0cm}},
+            column 11/.append style={nodes={text width=1.0cm}},
+            column 12/.append style={nodes={text width=1.0cm}},
+            column 13/.append style={nodes={text width=1.0cm}},
+            column 14/.append style={nodes={text width=1.0cm}},
+            column 15/.append style={nodes={text width=1.0cm}}
+            ] {
+            ВЛ \& 0     \& 1     \& 2     \& 3     \& 4     \& 5     \& 6     \& 7     \& 8     \& 9     \& 10  \& тр \& $\bar{x}_{\text{Ф}}$ \& $\bar{x}_{\text{А}}$\\
+            0  \&  --- \& --- \& 0,0000 \&0,0000 \& 0,0000 \& 0,0000 \& 0,0000 \& 0,0000 \& 0,0000 \& 0,0000 \& --- \& --- \& -1,1181 \& 0,8062 \\
+            1  \&  --- \& --- \& 0,3176 \&0,5323 \& 0,7055 \& 0,7804 \& 0,7118 \& 0,5189 \& 0,2779 \& 0,0703 \& --- \& --- \& -0,7915 \& 0,7085 \\
+            2  \&  --- \& 0,0556 \& 0,4478 \&0,7040 \& 0,8827 \& 0,9390 \& 0,8954 \& 0,7478 \& 0,4507 \& 0,1040 \& --- \& --- \& -0,5936 \& 0,6776 \\
+            3  \&  --- \& 0,1384 \& 0,5526 \&0,8099 \& 0,9535 \& 0,9878 \& 0,9664 \& 0,8931 \& 0,6699 \& 0,1623 \& --- \& --- \& -0,3957 \& 0,7647 \\
+            4  \&  --- \& 0,2298 \& 0,6499 \&0,8812 \& 0,9836 \& 1,0000 \& 0,9924 \& 0,9719 \& 0,8706 \& 0,4168 \& --- \& --- \& -0,1979 \& 0,6830 \\
+            5  \&  0,0000 \& 0,3211 \& 0,7405 \&0,9275 \& 0,9975 \& 1,0000 \& 1,0000 \& 0,9939 \& 0,9667 \& 0,8132 \& --- \& --- \& 0,0000 \& 0,0340 \\
+            6  \&  0,0813 \& 0,4131 \& 0,8177 \&0,9610 \& 1,0000 \& 1,0000 \& 1,0000 \& 1,0000 \& 0,9930 \& 0,9224 \& 0,7636 \& 0,7636 \& 0,1422 \& -0,0269 \\
+            7  \&  0,1579 \& 0,5079 \& 0,8807 \&0,9830 \& 1,0000 \& 1,0000 \& 1,0000 \& 1,0000 \& 1,0000 \& 0,9422 \& 0,8557 \& 0,8557 \& 0,2052 \& -0,0317 \\
+            П  \&  0,5158 \& 0,8183 \& 1,0000 \&1,0000 \& 1,0000 \& 1,0000 \& 1,0000 \& 1,0000 \& 1,0000 \& 0,9514 \& 0,8852 \& 0,8852 \& 0,5054 \& -0,0393 \\
+            $\bar{z}$  \&  2,3685 \& 2,3169 \& 2,2405 \&2,2405 \& 2,2405 \& 2,2405 \& 1,6570 \& 1,6570 \& 1,6570 \& 1,6843 \& 1,7215 \& 1,7215 \& --- \& --- \\
+            $\bar{z}_1$  \&  1,8730 \& 1,0306 \& 0,2205 \&0,0819 \& 0,0746 \& 0,0746 \& 0,0746 \& 0,0891 \& 0,2712 \& 0,7633 \& 1,0442 \& 1,0442 \& 2,4048 \& 1,7215 \\
+            $\bar{z}_2$  \&  --- \& 1,7897 \& 0,8355 \&0,3452 \& 0,1777 \& 0,1510 \& 0,1738 \& 0,3213 \& 0,5970 \& 0,9019 \& 1,1224 \& 1,1224 \& --- \& --- \\
+            };
+        \end{tikzpicture}
+\end{document}
