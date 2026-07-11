@@ -1,0 +1,84 @@
+\setmainlanguage{russian}
+
+%\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+\setmathfont{Latin Modern Math}
+
+\newfontfamily\segoe{Segoe UI}
+
+%\newfontfamily\chapterfont{Montserrat}
+%\newfontfamily\sectionfont{Montserrat}
+%\newfontfamily\subsectionfont{Montserrat}
+
+\newfontfamily\chapterfont{Times New Roman}
+\newfontfamily\sectionfont{Times New Roman}
+\newfontfamily\subsectionfont{Times New Roman}
+
+
+\DeclareCaptionLabelSeparator{custom}{.}
+\DeclareCaptionFormat{custom}
+{%
+    \textit{\small #1#2} \textit{\footnotesize #3}
+}
+\captionsetup
+{
+    format=custom,%
+%    labelformat=custom,%
+    labelsep=custom
+}
+
+%\titleformat{\chapter}[display]
+%  {\normalfont\chapterfont\Large}
+%  {\chapterfont\Large\chaptertitlename\ \thechapter}
+%  {0pt}
+%  {}
+%  [\titlerule]
+
+\titleformat{\chapter}
+  {\center\normalfont\chapterfont\large}
+  {\thechapter}
+  {1em}
+  {}
+  []
+
+% Adjust spacing around the chapter heading
+\titlespacing*{\chapter}
+  {0pt}   % Left margin
+  {0pt}  % Space above (before "Chapter X")
+  {5pt}  % Space below (after the rule)
+
+% Section style
+\titleformat{\section}
+  {\center\normalfont\sectionfont\large}
+  {\thesection}
+  {1em}
+  {}
+
+% Subsection style
+\titleformat{\subsection}
+  {\center\normalfont\subsectionfont\large}
+  {\thesubsection}
+  {1em}
+  {}
+
+% Configure fancyhdr
+\pagestyle{fancy}
+\fancyhf{}  % Clear all header and footer fields
+
+% Set headers with page numbers
+% Even pages (left side): section title, right side: page number
+%\fancyhead[LE]{\nouppercase{\normalfont\small\chapterfont\rightmark}}   % Section title on left
+%\fancyhead[RE]{\normalfont\small\chapterfont\thepage}                    % Page number on right
+
+% Odd pages (right side): page number on left, chapter title on right
+%\fancyhead[LO]{\normalfont\small\chapterfont\thepage}                    % Page number on left
+%\fancyhead[RO]{\normalfont\chapterfont\nouppercase{\normalfont\small\chapterfont\leftmark}}     % Chapter title on right
+
+
+\fancyfoot[CE,CO]{\normalfont\footnotesize\chapterfont\thepage}  % Page number in center of footer
+
+
+
+
+\makenomenclature
