@@ -1,0 +1,49 @@
+\newcommand{\incfig}[1]{
+    \small{
+    \import{./figures/}{#1.pdf_tex}
+    }
+}
+
+\newcommand{\incfif}[1]{
+    \small{
+        \def\svgwidth{0.8\textwidth}
+        \import{./figures/}{#1.pdf_tex}
+    }
+}
+
+\renewcommand{\nomname}{Список обозначений и сокращений}
+
+\makeatletter
+\newcommand{\cyrchapappendix}{%
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \renewcommand{\thechapter}{\Asbuk{chapter}}%
+}
+\makeatother
+
+%\usepackage{etoolbox}
+
+\renewcommand\nomgroup[1]{%
+  \item[\large\subsectionfont
+  \ifstrequal{#1}{S}{Спуск судна}{%
+  \ifstrequal{#1}{A}{Сокращения}{%
+    \ifstrequal{#1}{D}{Главные размерения и коэффициенты}{%
+        \ifstrequal{#1}{T}{Элементы теоретического чертежа и остойчивость}{%
+            \ifstrequal{#1}{O}{Ординаты теоретического чертежа}{%
+                \ifstrequal{#1}{I}{Численное интегрирование}{}
+            }
+        }
+    }
+  }}
+  ]\vspace{5pt}}
+% ----------------------------------------------------------
+
+\typeout{Writing nomenclature file \jobname.nlo}
+
+% Remove default chapter/section marks formatting
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+% Remove all rules (default header/footer lines)
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
