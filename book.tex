@@ -1,0 +1,68 @@
+\documentclass[a5paper, 11pt]{book}
+
+\usepackage[a5paper,
+            left=1.9cm,
+            right=1.2cm,
+            top=1.2cm,
+            bottom=2.0cm,
+            footskip=1.0cm]{geometry}
+
+\input{./settings/packages.tex}
+
+\input{./settings/greeks_fix.tex}
+
+\input{./settings/commands.tex}
+
+\input{./settings/layout.tex}
+
+\begin{document}
+
+%\onehalfspacing
+\setstretch{1.05}
+
+\tikzset{
+    addenum/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.1ex,
+        text height=1.10ex,
+        nodes in empty cells
+    }
+}
+
+\tikzset{ 
+    table/.style={
+        matrix of nodes,
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        nodes={rectangle,draw=gray!30,minimum height=0.5cm,align=center,anchor=center},
+        text depth=0.2ex,
+        text height=1.20ex,
+        nodes in empty cells
+    }
+}
+
+
+
+
+\input{./chapters/00_frontmatter.tex}
+
+\input{./chapters/01_abbreviations.tex}
+
+\tableofcontents
+
+\input{./chapters/02_chapter_1.tex}
+
+\input{./chapters/03_chapter_2.tex}
+
+\input{./chapters/04_chapter_3.tex}
+
+\input{./chapters/05_appendix_1.tex}
+
+\input{./chapters/06_appendix_2.tex}
+
+\input{./chapters/99_backmatter.tex}
+
+\end{document}
